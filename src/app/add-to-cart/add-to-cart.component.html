@@ -1,0 +1,78 @@
+<body>
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button routerLink="/userpage" class="btn btn-info"
+        style="font-size: 15px;"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+        Back</button><br><br><br>
+    <h3 align="center">Total Cart Items: {{cart.length}}</h3>
+    <br><br>
+    <ng-container *ngIf="cart.length !=0">
+        <div class="container">
+            <div class="card-table">
+                <div class="cart-product">
+                    <table class="table table-responsive">
+                        <thead style="font-size: 18px;">
+                            <tr bgcolor="lavender">
+                                <th>Order Id</th>
+                                <th>Product Image</th>
+                                <th>Product Name</th>
+                                <!-- <th>User Id</th> -->
+                                <th>User Name</th>
+                                <th>User Phone</th>
+                                <!-- <th>Product Id</th> -->
+                                <th>Quantity</th>
+                                <th>Product Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-success" style="font-size: 16px;">
+                            <script src="assets/js/validation.js"></script>
+                            <tr *ngFor="let p of cart;let i= index">
+                                <td>{{p.o_id}}</td>
+                                <td><img style="width: 120px;" src={{p.p_img}} alt=""></td>
+                                <td>{{p.p_name}}</td>
+                                <!-- <td style="width:25%">{{p.u_id}}</td> -->
+                                <td style="width:12%">{{p.u_name}}</td>
+                                <td style="width:12%">{{p.u_phone}}</td>
+                                <!-- <td>{{p.p_id}}</td> -->
+                                <td><input type="number" [(ngModel)]="p.qty" min="1" max="10"></td>
+                                <td style="width:12%"> {{p.p_price | total: p.qty|currency:'INR'}}</td>
+                                <td>
+                                    <button (click)="updateqty(p)" class="btn btn-info btn-sm"><i
+                                            class="fa fa-refresh"></i></button>
+                                    &nbsp;
+                                    <button (click)="removeproduct(p)" class="btn btn-danger btn-sm"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <!-- <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td> -->
+                                <td><button routerLink="/userpage" class="btn btn-warning btn-lg">Order More</button>
+                                </td>
+                                <td>
+                                    <h2><strong>Grand Total : {{grandTotal | currency:'INR'}}</strong></h2>
+                                </td>
+                                <td><button class="btn btn-primary btn-lg" (click)="pay()">Place Order</button></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+
+
+    <ng-container *ngIf="cart.length==0">
+        <div class="container">
+            <div class="center">
+                <img src="https://i.pinimg.com/originals/c6/0f/ea/c60fea3ac3aab2e82c2f7ea901ef55f6.jpg"
+                    alt="Cart Is Empty" style="height: 220px;">
+                <h3 style="color: red;">Your cart is empty!</h3>
+                <h6>Add Product to it now</h6>
+                <button routerLink="/userpage" class="btn btn-info">Shop Now</button>
+            </div>
+        </div>
+    </ng-container>
+</body>

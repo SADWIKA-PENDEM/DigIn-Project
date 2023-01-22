@@ -1,0 +1,147 @@
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-info" align="left" routerLink="/header" style="font-size: 15px;"><i class="fa fa-chevron-circle-left"></i><b>
+        Back</b></button>
+<!-- <h1 style="font-size: xx-large;" align="center"><b><u>Products Insertion</u></b></h1> -->
+<br><br><br><br>
+<div class="container" id="registerpage">
+    
+    <!-- <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" novalidate>
+
+        <label>Product Name: &nbsp;</label>
+        <input type="text" ngModel name="p_name" #p_name="ngModel" id="in" required placeholder="Enter Product Name">
+        <div *ngIf="p_name.errors?.['required'] && p_name.touched" id="emsg">Please Enter Product Name</div>
+
+        <br>
+
+        <label>Category Id: &nbsp;</label>
+        <select id="in" required ngModel name="c_id" #c_id="ngModel">
+            <option value="">Select Category</option>
+            <option value="1">(Groceries)</option>
+            <option value="2">(Beauty Products)</option>
+            <option value="3">(Fashion)</option>
+            <option value="4">(Electronics)</option>
+          </select>
+        <div *ngIf="c_id.errors?.['required'] && c_id.touched" id="emsg">Please Select Category</div>
+
+        <br>
+
+        <label>Suitable Age: &nbsp;</label>
+        <input type="text" ngModel name="bage" #bage="ngModel" id="in" required placeholder="Enter Baby Age">
+        <div *ngIf="bage.errors?.['required'] && bage.touched" id="emsg">Please Enter Baby Age</div>
+
+        <br>
+
+        <label>Product Price: &nbsp;</label>
+        <input type="text" ngModel name="p_price" #p_price="ngModel" id="in" required placeholder="Enter Product Price">
+        <div *ngIf="p_price.errors?.['required'] && p_price.touched" id="emsg">Please Enter Product Price</div>
+
+        <br>
+
+        
+        <label>Product Description: &nbsp;</label>
+        <input type="text" ngModel name="p_desc" #p_desc="ngModel" id="in" required minlength="10" placeholder="Enter Product Description"
+            maxlength="1000.">
+        <div *ngIf="p_desc.errors?.['required'] && p_desc.touched" id="emsg">Please Enter Description of Product</div>
+
+        <br>
+
+        <label>Product Image: &nbsp;</label>
+        <input type="text" ngModel name="p_img" #p_img="ngModel" id="in" required placeholder="Enter Product Path">
+        <div *ngIf="p_img.errors?.['required'] && p_img.touched" id="emsg">Please Enter Image Path</div>
+
+        <br>
+
+        <label>Product Quantity: &nbsp;</label>
+        <input type="text" ngModel name="a_quan" #a_quan="ngModel" id="in" required placeholder="Enter Avalible Product Quanity">
+        <div *ngIf="a_quan.errors?.['required'] && a_quan.touched" id="emsg">Please Enter Quantity of the Product</div>
+
+        <br>
+
+        <button type="submit" class="btn btn-success" style="font-size: 20px;">Save</button>
+    </form> -->
+
+    <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" novalidate>
+        <div class="container">
+            <table align="center">
+                <thead>
+                    <tr class="table-info text-center">
+                        <th colspan="2">
+                            <h1><b><u>Products Insertion</u></b></h1><br>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="right"><label>Product Name: &nbsp;</label></td>
+                        <td align="left"><input type="text" ngModel name="p_name" #p_name="ngModel" id="in" required
+                                placeholder="Enter Product Name">
+                            <div *ngIf="p_name.errors?.['required'] && p_name.touched" id="emsg">Please Enter Product
+                                Name</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><label>Category Id: &nbsp;</label></td>
+                        <td align="left"><select id="in" required ngModel name="c_id" #c_id="ngModel">
+                                <option value="">Select Category</option>
+                                <option value="1">(Groceries)</option>
+                                <option value="2">(Beauty Products)</option>
+                                <option value="3">(Fashion)</option>
+                                <option value="4">(Electronics)</option>
+                            </select>
+                            <div *ngIf="c_id.errors?.['required'] && c_id.touched" id="emsg">Please Select Category
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- <tr>
+                        <td align="right"><label>Suitable Age: &nbsp;</label></td>
+                        <td align="left"><input type="text" ngModel name="bage" #bage="ngModel" id="in" required
+                                placeholder="Enter Baby Age">
+                            <div *ngIf="bage.errors?.['required'] && bage.touched" id="emsg">Please Enter Baby Age</div>
+                        </td>
+                    </tr> -->
+
+                    <tr>
+                        <td align="right"><label>Product Price: &nbsp;</label></td>
+                        <td align="left"> <input type="text" ngModel name="p_price" #p_price="ngModel" id="in" required
+                                placeholder="Enter Product Price">
+                            <div *ngIf="p_price.errors?.['required'] && p_price.touched" id="emsg">Please Enter Product
+                                Price</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><label>Product Description: &nbsp;</label></td>
+                        <td align="left"><input type="text" ngModel name="p_desc" #p_desc="ngModel" id="in" required
+                                minlength="10" placeholder="Enter Product Description" maxlength="1000.">
+                            <div *ngIf="p_desc.errors?.['required'] && p_desc.touched" id="emsg">Please Enter
+                                Description of Product</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><label>Product Image: &nbsp;</label></td>
+                        <td align="left"><input type="text" ngModel name="p_img" #p_img="ngModel" id="in" required
+                                placeholder="Enter Product Path">
+                            <div *ngIf="p_img.errors?.['required'] && p_img.touched" id="emsg">Please Enter Image Path
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><label>Product Quantity: &nbsp;</label></td>
+                        <td align="left"><input type="text" ngModel name="a_quan" #a_quan="ngModel" id="in" required
+                                placeholder="Enter Avalible Product Quanity">
+                            <div *ngIf="a_quan.errors?.['required'] && a_quan.touched" id="emsg">Please Enter Quantity
+                                of the Product</div>
+                        </td>
+                    </tr><br>
+
+                    <button class="btn btn-success btn-lg" style="font-size: 20px;" align="center">Save</button>
+
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

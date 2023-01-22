@@ -1,0 +1,175 @@
+<!--User signIn/signUp page-->
+
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <h1 style="font-size: 40px"><img src="/assets/logo.jpg" width="18%"><a href="#"></a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav" style="font-size: 20px">
+                <li><a routerLink=""><b>Home</b></a></li>
+                <!-- <li><a routerLink="signin"><b>SignIn/SignUp</b></a></li> -->
+            </ul>
+        </nav>
+    </header><br><br>
+    <div class="container">
+        <div class="jumbotron" id="ap">
+            <script></script>
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" nonvalidate>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" ngModel name="un" #emailis="ngModel"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                    <h5>We'll never share your email with anyone else.</h5>
+
+                    <div *ngIf="emailis.errors?.['required']  && emailis.touched">
+                        <h5>Enter emailId</h5>
+                    </div>
+                    <div *ngIf="emailis.errors?.['minlength']  && emailis.touched">
+                        <h5>Enter atleast 2 character for emailID </h5>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <script src="assets/js/validation.js"></script>
+                    <input type="password" class="form-control" id="floatingPassword" ngModel name="pw"
+                        placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+
+                    <div *ngIf="signin.errors?.['required'] && signin.touched">
+                        <h5>Enter password</h5>
+                    </div>
+                    <div *ngIf="signin.errors?.['minlength'] && signin.touched">
+                        <h5>Enter atleast 2 character for password</h5>
+                    </div>
+
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-outline-success btn-lg" style="font-size: 15px;"
+                        [disabled]="!loginForm.valid">LogIn</button>
+                    &nbsp;&nbsp;
+                    <button type="reset" value="Reset" class="btn btn-outline-danger btn-lg"
+                        style="font-size: 15px;"><b>Reset</b></button>&nbsp;&nbsp;
+                    <button style="font-size:19px" type="SignUp" routerLink="/signup"
+                        class="btn btn-outline-info btn-lg">SignUp&nbsp;<i class="material-icons">&#xe7fe;</i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let product of products"><br><br><br>
+                <div class="card" style="width:300px; height: 400px;" routerLink="/signin">
+                    <img class="card-img-top" [src]="product.imagePath" alt="Card image"
+                        style="width:100%; height: 300px;">
+                    <div class="card-body">
+                        <h4 class="card-title" align="center">{{product.name}}</h4>
+                        <p class="card-text">{{product.description}}</p>
+                        <!-- <h3>₹{{product.price}}/-</h3> -->
+                        <!-- <p align="right">
+                        <button class="btn btn-primary"> Add to Cart </button>
+                    </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid mt-5">
+            <div class="card bg-white mx-5">
+                <div class="row mb-4">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="footer-text pull-left">
+                            <div class="d-flex">
+                                <img src="/assets/logo.jpg" style="width: 17%;" id="about">
+                            </div>&nbsp;
+                            <p class="card-text" style="text-align: justify;">Digin is the first in India to
+                                introduce this new concept. Did you ever imagine that the freshest of fruits and
+                                vegetables, top quality pulses and food grains,
+                                dairy products and hundreds of branded items could be handpicked and delivered to your
+                                home, all at the click of a button?
+                                India's first comprehensive online megastore, brings a whopping 20000+ products with
+                                more than 1000 brands, to over 4 million happy customers.
+                                From household cleaning products to beauty and
+                                makeup, DigIn has everything you need for your daily needs.
+                                is convenience personified. Online grocery shopping has never been easier.
+                                Need things fresh? Whether it's fruits and vegetables or dairy and meat,
+                                we have this covered as well! Get fresh eggs, meat, fish and more online at your
+                                convenience. Hassle-free Home Delivery options.</p>
+                            <div class="social mt-2 mb-3">
+                                <a href="https://www.facebook.com/home.php"><i class="fa fa-facebook"
+                                        style="font-size:26px; color:  #3b5998;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="https://twitter.com/"><i class="fa fa-twitter"
+                                        style="font-size:26px; color: #00acee"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"
+                                        style="font-size:26px; color: #25D366;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="https://www.instagram.com/accounts/login/"><i class="fa fa-instagram"
+                                        style="font-size:26px; color:rgb(237, 22, 72)"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Contact Us</h5>
+                        <ul class="footer-contact">
+                            <li class="phone"><i class="fa fa-phone"></i> &nbsp; +91&nbsp;6309692813</li>
+                            <li class="email"><i class="fa fa-envelope"></i> &nbsp; service@digin.in</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Services</h5>
+                        <ul>
+                            <li>Online Service</li>
+                            <li>Easy Returns</li>
+                            <li>Delivery To Your Doorstep</li>
+                            <li>Support</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Company</h5>
+                        <ul class="card-text">
+                            <!-- <li><a href="#about" target="_top" id="working">About Us</a></li> -->
+                            <li><a href="" target="_top" id="working">Blog</a></li>
+                            <li><a href="#contact" target="_top" id="working">Contact</a></li>
+                            <li><a routerLink="signup" id="working">Join Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <div class="pull-right mr-4 d-flex policy">
+                            <div id="l">
+                                <h4 class="heading" style="color: green;">Payment Options: </h4>
+                            </div>
+                            <div id="l">
+                                <h2 class="heading">COD</h2>
+                            </div>
+                            <div id="l"><img src="https://www.lamyshop.in/pub/media/images/PAY.png" width="400px"
+                                    height="50px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider mb-4"></div>
+                <div class="row" style="font-size:10px;">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <div class="pull-left">
+                            <p><b>Copyright <i class="fa fa-copyright"></i> 2022 DigIn</b></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="pull-right mr-4 d-flex policy">
+                            <div id="l">Terms & Conditions</div>
+                            <div id="l">Privacy Policy</div>
+                            <div id="l">Cookie Policy</div>
+                        </div>
+                    </div>
+                    <div class="ic-floating" data-ga-event-category="Page Interaction" data-ga-event-action="buttonTap"
+                        data-ga-event-label="fabButton">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

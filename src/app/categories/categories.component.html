@@ -1,0 +1,29 @@
+
+<div class="container"><br><br>
+  <button type="submit" class="btn btn-info" align="left" routerLink="/header" style="font-size: 15px;"><i
+      class="fa fa-chevron-circle-left"></i><b> Back</b></button>
+  <button type="submit" class="btn btn-danger" style="float: right; font-size: 15px;" routerLink="" (click)="success()">
+    <i class="glyphicon glyphicon-off" aria-hidden="true"></i><b>
+      LogOut</b></button>
+</div>
+<br><br>
+<h1 align="center"><b><u>Categories</u></b></h1>
+<br><br>
+<div class="container">
+  <table class="table table-bordered table-stripped table-hover">
+    <thead style="font-size: 18px;">
+      <tr class="table-success">
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>No of Products</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let c of category" style="font-size: 16px;">
+      <tr bgcolor="lavender">
+        <td>{{c.c_id}}</td>
+        <td>{{c.c_list}}</td>
+        <td>{{c.count}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

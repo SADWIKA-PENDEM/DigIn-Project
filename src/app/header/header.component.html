@@ -1,0 +1,199 @@
+<!--Admin Page-->
+
+<body id="up">
+    <header class="site-header">
+        <div class="site-identity">
+            <h1 style="font-size: 30px"><a routerLink=""><img src="/assets/logo.jpg" width="15%"></a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav" style="font-size: 20px">
+                <li><a routerLink="/categories"><b>Categories</b></a></li>
+                <li><a routerLink="/products"><b>Product</b></a></li>
+                <li><a routerLink="/userdata"><b>UserData</b></a></li>
+                <li><a (click)="success()" id="log"><b><i class="glyphicon glyphicon-off"></i></b></a></li>
+            </ul>
+        </nav>
+    </header><br><br>
+    <div class="jumbotron text-center">
+        <!-- <h1 style="font-size: xx-large;" align="center">Welcome Back, Admin</h1> -->
+        <!-- <h1 align="center" style="font-size: x-large;"><b>{{thisUser.u_name}}</b></h1> -->
+        <h1 class="display-4">Welcome Back, Admin </h1>
+        <p>Settings<i class="glyphicon glyphicon-cog"></i>&nbsp;&nbsp;<mark>DIGIN</mark></p>
+    </div>
+    <!-- <body id="hii">
+    <div id="main">
+      <div id="clock"></div>
+      <div id="date"></div>
+    </div>
+  </body>
+  <script src="/assets/js/validation.js">   </script>   -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 pt-4">
+                <div class="card" style="background-color: rgb(238, 214, 193);">
+                    <div class="card-body" align="center">
+                        <i class="fa fa-bars" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                        <h4 class="card-title">Categories</h4>
+                        <!-- <p class="catrd-text">🤐</p> -->
+                        <a routerLink="/categories" th:href="@{admin/Categories}" class="card-link btn btn-muted"
+                            style="background-color: rgb(47, 46, 46);">
+                            <h3 style="color: white;">Open</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pt-4">
+                <div class="card" style="background-color: slategray;">
+                    <div class="card-body" align="center">
+                        <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                        <h4 class="card-title">Products</h4>
+                        <!-- <p class="catrd-text">🤐</p> -->
+                        <a routerLink="/products" th:href="@{admin/Products}" class="card-link btn btn-muted"
+                            style="background-color: rgb(47, 46, 46);">
+                            <h3 style="color: white;">Click</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pt-4">
+                <div class="card" style="background-color: rgb(238, 214, 193);;">
+                    <div class="card-body" align="center">
+                        <i class="fa fa-user-o" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                        <h4 class="card-title">UserData</h4>
+                        <!-- <p class="catrd-text">Manage the UserData </p> -->
+                        <a routerLink="/userdata" th:href="@{admin/UserData}" class="card-link btn btn-muted"
+                            style="background-color: rgb(47, 46, 46);">
+                            <h3 style="color: white;">Show</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pt-4"></div>
+            <div class="col-sm-4 pt-4">
+                <div class="card" style="background-color: slategray;">
+                    <div class="card-body" align="center">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                        <h4 class="card-title">Add New Product</h4>
+                        <!-- <p class="catrd-text">Insert Your Products </p> -->
+                        <a routerLink="/iuproducts" th:href="@{admin/UserData}" class="card-link btn btn-muted"
+                            style="background-color: rgb(47, 46, 46);">
+                            <h3 style="color: white;">Add</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-4 pt-4">
+                <div class="card" style="background-color: rgb(238, 214, 193);;">
+                    <div class="card-body" align="center">
+                        <i class="fa fa-exclamation-triangle" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                        <h4 class="card-title">LogOut</h4>
+                        <p class="catrd-text">&nbsp;</p>
+                        <a (click)="success()" th:href="@{admin/UserData}" class="card-link btn btn-muted"
+                            style="background-color: rgb(47, 46, 46);">
+                            <h3 style="color: white;">Manage</h3>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid mt-5">
+            <div class="card bg-white mx-5">
+                <div class="row mb-4">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="footer-text pull-left">
+                            <div class="d-flex">
+                                <img src="/assets/logo.jpg" style="width: 17%;" id="about">
+                            </div>&nbsp;
+                            <p class="card-text" style="text-align: justify;">Digin is the first in India to
+                                introduce this new concept. Did you ever imagine that the freshest of fruits and
+                                vegetables, top quality pulses and food grains,
+                                dairy products and hundreds of branded items could be handpicked and delivered to your
+                                home, all at the click of a button?
+                                India's first comprehensive online megastore, brings a whopping 20000+ products with
+                                more than 1000 brands, to over 4 million happy customers.
+                                From household cleaning products to beauty and
+                                makeup, DigIn has everything you need for your daily needs.
+                                is convenience personified. Online grocery shopping has never been easier.
+                                Need things fresh? Whether it's fruits and vegetables or dairy and meat,
+                                we have this covered as well! Get fresh eggs, meat, fish and more online at your
+                                convenience. Hassle-free Home Delivery options.</p>
+                            <div class="social mt-2 mb-3">
+                                <a href="https://www.facebook.com/home.php"><i class="fa fa-facebook"
+                                        style="font-size:26px; color:  #3b5998;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="https://twitter.com/"><i class="fa fa-twitter"
+                                        style="font-size:26px; color: #00acee"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"
+                                        style="font-size:26px; color: #25D366;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="https://www.instagram.com/accounts/login/"><i class="fa fa-instagram"
+                                        style="font-size:26px; color:rgb(237, 22, 72)"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Contact Us</h5>
+                        <ul class="footer-contact">
+                            <li class="phone"><i class="fa fa-phone"></i> &nbsp; +91&nbsp;6309692813</li>
+                            <li class="email"><i class="fa fa-envelope"></i> &nbsp; service@digin.in</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Services</h5>
+                        <ul>
+                            <li>Online Service</li>
+                            <li>Easy Returns</li>
+                            <li>Delivery To Your Doorstep</li>
+                            <li>Support</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Company</h5>
+                        <ul class="card-text">
+                            <!-- <li><a href="#about" target="_top" id="working">About Us</a></li> -->
+                            <li><a routerLink="" target="_top" id="working">Blog</a></li>
+                            <li><a href="#contact" target="_top" id="working">Contact</a></li>
+                            <li><a routerLink="signup" id="working">Join Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <div class="pull-right mr-4 d-flex policy">
+                            <div id="l">
+                                <h4 class="heading" style="color: green;">Payment Options: </h4>
+                            </div>
+                            <div id="l">
+                                <h2 class="heading">COD</h2>
+                            </div>
+                            <div id="l" class="downimg">
+                                <img src="https://www.lamyshop.in/pub/media/images/PAY.png" width="400px" height="50px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider mb-4"></div>
+                <div class="row" style="font-size:10px;">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <div class="pull-left">
+                            <p><b>Copyright <i class="fa fa-copyright"></i> 2022 DigIn</b></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="pull-right mr-4 d-flex policy">
+                            <div id="l">Terms & Conditions</div>
+                            <div id="l">Privacy Policy</div>
+                            <div id="l">Cookie Policy</div>
+                        </div>
+                    </div>
+                    <div class="ic-floating" data-ga-event-category="Page Interaction" data-ga-event-action="buttonTap"
+                        data-ga-event-label="fabButton">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

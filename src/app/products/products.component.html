@@ -1,0 +1,168 @@
+<body>
+<div class="container"><br><br>
+  <button type="submit" class="btn btn-info" align="left" routerLink="/header" style="font-size: 15px;"><i
+      class="fa fa-chevron-circle-left"></i><b> Back</b></button>
+  <button type="submit" class="btn btn-danger" style="float: right; font-size: 15px;" routerLink="" (click)="success()">
+    <i class="glyphicon glyphicon-off" aria-hidden="true"></i><b>
+      LogOut</b></button>
+</div>
+<br><br>
+
+<h1 align="center"><b><u>Products</u></b></h1>
+<br><br>
+<div class="container">
+  <!-- <form #value="ngForm" (ngSubmit)="search(value.value)">
+    <button class="btn btn-success" (click)=refreshPage() style="font-size: 12px;"><i class="fa fa-refresh"
+        aria-hidden="true"></i></button>
+    <input type="text" ngModel name="search" #name="ngModel" align="right" width="70px" height="28px"
+      placeholder="Enter Product name or id" style="font-size: 13px;">
+    <button type="submit" class="btn btn-dark" style="font-size: 12px;"><i class="fa fa-search" aria-hidden="true"></i>
+    </button> -->
+  <!-- <div align="right">
+      <button routerLink="/iuproducts" class="btn btn-primary" style="font-size: 15px;">Insert</button>
+    </div> -->
+  <!-- </form> -->
+  <br>
+  <table class="table table-bordered table-stripped table-hover">
+    <thead style="font-size: 18px;">
+      <tr class="table-primary">
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category Id</th>
+        <!-- <th>Age</th> -->
+        <th>Product Price</th>
+        <th>Product Description</th>
+        <th>Product Image</th>
+        <th>Product Quantity</th>
+        <th [width]="140">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let p of product" style="font-size: 16px;">
+      <tr class="table-success">
+        <td>{{p.p_id}}</td>
+        <td>{{p.p_name}}</td>
+        <td>{{p.c_id}}</td>
+        <!-- <td>{{p.bage}} Months</td> -->
+        <td>{{p.p_price | currency:'INR'}}</td>
+        <td>{{p.p_desc}}</td>
+        <td><img style="width: 120px;" src="{{p.p_img}}" alt=""></td>
+        <!-- <td>{{p.p_img}}</td> -->
+        <td>{{p.a_quan}} Qty</td>
+        <td class="table-danger">
+          <button type="submit" class="btn btn-warning" data-toggle="modal" data-target="#mymodal" (click)="update(p)"
+            style="font-size: 15px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+          &nbsp;
+          <button (click)="delete(p.p_id)" class="btn btn-danger" style="font-size: 15px;"><i class="fa fa-trash"
+              aria-hidden="true"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal" id="mymodal" role="dialog">
+  <div class="modal-content">
+    <!-- <form #add="ngForm" (ngSubmit)="editProduct(add.value)" id="updata">
+      <div class="container">
+        <table align="center">
+          <thead>
+            <tr class="table-info text-center">
+              <th colspan="2">
+                <h2>Update Producs Details</h2>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Product Id:</td>
+              <td align="right"><input type="hidden" ngModel name="p_id" [(ngModel)]=" updateData.p_id"></td>
+            </tr>
+            <tr>
+              <td>Product Name:</td>
+              <td><input ngModel name="p_name" [(ngModel)]=" updateData.p_name"></td>
+            </tr>
+           Category Id:
+            <input ngModel name="c_id" [(ngModel)]=" updateData.c_id"><br>
+
+            Age:
+            <input ngModel name="bage" [(ngModel)]=" updateData.bage"><br>
+
+            Product Price:
+            <input ngModel name="p_price" [(ngModel)]=" updateData.p_price"><br>
+
+            Product Description:
+            <input ngModel name="p_desc" [(ngModel)]=" updateData.p_desc"><br>
+
+            Product Image:
+            <input ngModel name="p_img" [(ngModel)]=" updateData.p_img"><br>
+
+            Product Quantity:
+            <input ngModel name="a_quan" [(ngModel)]=" updateData.a_quan"><br>
+
+            <button class="btn btn-success" style="font-size: 20px;" (click)="style()" align="center"
+              style="font-size: 15px;">Save</button>
+          </tbody>
+        </table>
+      </div>
+    </form> -->
+    <form #add="ngForm" (ngSubmit)="editProduct(add.value)" id="updata">
+      <div class="container">
+        <br>
+        <table align="center">
+          <thead>
+            <tr class="table-info text-center">
+              <th colspan="2">
+                <h1><u>Update Product Details</u></h1><br>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="right"> Product Id: &nbsp;</td>
+              <td align="left"><input type="hidden" ngModel name="p_id" [(ngModel)]=" updateData.p_id"></td>
+            </tr>
+
+            <tr>
+              <td align="right">Product Name: &nbsp;</td>
+              <td align="left"><input ngModel name="p_name" [(ngModel)]=" updateData.p_name"></td>
+            </tr>
+
+            <tr>
+              <td align="right">Category Id: &nbsp;</td>
+              <td align="left"><input ngModel name="c_id" [(ngModel)]=" updateData.c_id"></td>
+            </tr>
+
+            <!-- <tr>
+              <td align="right"> Age: &nbsp;</td>
+              <td align="left"> <input ngModel name="bage" [(ngModel)]=" updateData.bage"></td>
+            </tr> -->
+
+            <tr>
+              <td align="right"> Product Price: &nbsp;</td>
+              <td align="left"> <input ngModel name="p_price" [(ngModel)]=" updateData.p_price"></td>
+            </tr>
+
+            <tr>
+              <td align="right"> Product Description: &nbsp;</td>
+              <td align="left"> <input ngModel name="p_desc" [(ngModel)]=" updateData.p_desc"></td>
+            </tr>
+
+            <tr>
+              <td align="right"> Product Image: &nbsp;</td>
+              <td align="left"> <input ngModel name="p_img" [(ngModel)]=" updateData.p_img"></td>
+            </tr>
+
+            <tr>
+              <td align="right"> Product Quantity: &nbsp;</td>
+              <td align="left"> <input ngModel name="a_quan" [(ngModel)]=" updateData.a_quan"></td>
+            </tr><br>
+
+            <button class="btn btn-success btn-lg" style="font-size: 20px;" (click)="style()"
+              align="center">Save</button>
+
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
